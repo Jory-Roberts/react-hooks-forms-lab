@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
-function ItemForm(props) {
+function ItemForm({ onItemFormSubmit }) {
 	const [itemName, setItemName] = useState('');
 	const [itemCategory, setItemCategory] = useState('Produce');
 
@@ -13,7 +13,7 @@ function ItemForm(props) {
 			name: itemName,
 			category: itemCategory,
 		};
-		props.onItemFormSubmit(newItem);
+		onItemFormSubmit(newItem);
 	}
 
 	return (

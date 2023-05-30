@@ -14,7 +14,7 @@ function ShoppingList({ items, setItems }) {
 	function handleSearchChange(event) {
 		setSearch('');
 		setSearch(event.target.value);
-		console.log();
+		console.log(event.target.value);
 	}
 
 	function handleItemFormSubmit(newItem) {
