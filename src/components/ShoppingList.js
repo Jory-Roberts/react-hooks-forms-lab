@@ -17,6 +17,10 @@ function ShoppingList({ items, setItems }) {
 		console.log();
 	}
 
+	function handleItemFormSubmit(newItem) {
+		setItems([...items, newItem]);
+	}
+
 	const itemsToDisplay = items
 		.filter((item) => {
 			if (selectedCategory === 'All') return true;
@@ -29,7 +33,7 @@ function ShoppingList({ items, setItems }) {
 
 	return (
 		<div className='ShoppingList'>
-			<ItemForm />
+			<ItemForm onItemFormSubmit={handleItemFormSubmit} />
 			<Filter
 				onCategoryChange={handleCategoryChange}
 				onSearchChange={handleSearchChange}
